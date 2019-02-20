@@ -34,3 +34,8 @@ resource "aws_iam_role_policy_attachment" "service" {
   role       = "${aws_iam_role.service.name}"
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkService"
 }
+
+resource "aws_iam_role_policy_attachment" "s3_read" {
+  role       = "${aws_iam_role.service.name}"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+}
